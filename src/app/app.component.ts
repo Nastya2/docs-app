@@ -3,11 +3,12 @@ import {  RouterOutlet } from '@angular/router';
 import { ViewComponent } from "./components/view-component/view.component";
 import { CommonModule } from '@angular/common';
 import { DocumentService, TDocument, TPage } from './api/service';
+import { ZoomComponent } from "./components/zoom-component/zoom.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ViewComponent, CommonModule],
+  imports: [RouterOutlet, ViewComponent, CommonModule, ZoomComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -17,6 +18,7 @@ export class AppComponent {
   private currentPage = 0;
   public loadedPages: TPage[] = [];
   private document!: TDocument;
+  public scale = 1;
 
   constructor(private documentService: DocumentService) {}
 
@@ -53,6 +55,10 @@ export class AppComponent {
     }
     this.currentPage += this.pageSize;
     this.loadedPages = this.document.pages.slice(0, this.currentPage);
+  }
+
+  getZoom(event: number) {
+    this.scale = event;
   }
 
 }
