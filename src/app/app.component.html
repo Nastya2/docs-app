@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<div class="main">
+    <view *ngFor="let page of loadedPages" [url]="page.imageUrl"></view>
+</div>
+

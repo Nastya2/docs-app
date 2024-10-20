@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { ViewComponent } from './components/view-component/view.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
@@ -9,16 +8,9 @@ export const routes: Routes = [
         children: [
             {
                 path: "view/:id",
-                component: ViewComponent
+                component: AppComponent
             },
-            // {
-            //     path: "**",
-            //     pathMatch: "full",
-            //     redirectTo: "/viewer/view/1"
-            // }
         ],
-        
-    
     },
     {
         path: "**",

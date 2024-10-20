@@ -1,5 +1,26 @@
-import * as api from './1.json';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs';
 
-import { InjectionToken } from "@angular/core";
 
-export const API = new InjectionToken<any>("API", {providedIn: "root", factory: () => api})
+export type TDocument = {
+    name: string;
+    pages: TPage[]
+}
+
+export type TPage = {
+    number: number;
+    imageUrl: string;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+
+export class DocumentService {
+    constructor(private http: HttpClient) {}
+
+    getDocument(): Observable<TDocument> {
+        return this.http.get<TDocument>("assets/1.json");
+    }
+}

@@ -1,32 +1,24 @@
-import { Component, inject, Inject } from "@angular/core";
-import { RouterOutlet, ActivatedRoute } from "@angular/router";
-import { API } from "../../api/service";
+import { Component, Input } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+
+import { CommonModule } from "@angular/common";
 
 
 @Component({
     selector: 'view',
     standalone: true,
-    imports: [RouterOutlet],
+    imports: [RouterOutlet, CommonModule],
     templateUrl: './view.component.html',
     styleUrl: './view.component.scss'
 })
 
 export class ViewComponent {
+    @Input() url: string = "";
 
-    public urlView: string = "";
-
-    constructor(@Inject(API) private date: any,
-                private route: ActivatedRoute) {}
-
-    ngOnInit() {
-        const viewId = this.route.snapshot.paramMap.get('id');
-        this.urlView = "assets/" + this.getRoute(Number(viewId));
+    get urlView(): string {
+        return "assets/" + this.url;
     }
 
-    getRoute(viewId: number): string {
-        return this.date.pages.find((page: any) => page.number === viewId).imageUrl;
-    }
-   
-  
+    constructor() {}
 }
   
