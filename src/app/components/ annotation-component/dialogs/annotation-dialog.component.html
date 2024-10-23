@@ -1,0 +1,26 @@
+<!-- вставляем шаблон в зависимости от типа аннотации -->
+<div *ngTemplateOutlet="isText ? textTmp: imageTmp"></div> 
+
+
+<!-- шаблон для текстовой аннотации -->
+<ng-template #textTmp>
+  <h1>Добавление текстовой аннотации</h1>
+  <div>
+    <input [(ngModel)]="dataSend" placeholder="Введите текст аннотации">
+  </div>
+  <div>
+    <button (click)="close()">OK</button>
+  </div>
+</ng-template>
+
+<!-- шаблон для изображения -->
+<ng-template #imageTmp>
+  <h1>Добавление аннотации изображение</h1>
+  <div>
+    <input type="file" (change)="changeFile($event)" placeholder="Выберите картинку">
+  </div>
+  <div>
+    <button (click)="close()">OK</button>
+  </div>
+</ng-template>
+

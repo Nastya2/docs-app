@@ -1,0 +1,33 @@
+:host {
+    position: absolute;
+}
+
+.text-wrap {
+    display: inline-block;
+    padding: 5px;
+    background: grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.image-wrap {
+    display: inline-block;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.menu-annotations {
+    position: fixed;
+    top: 0;
+    left: 0;
+}

@@ -1,3 +1,5 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+
 .top-lining {
     height: 50px;
     position: fixed;
@@ -5,6 +7,9 @@
     background: grey;
     width: 100%;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pages {

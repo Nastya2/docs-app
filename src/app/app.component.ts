@@ -2,13 +2,14 @@ import { Component, HostListener } from '@angular/core';
 import {  RouterOutlet } from '@angular/router';
 import { ViewComponent } from "./components/view-component/view.component";
 import { CommonModule } from '@angular/common';
-import { DocumentService, TDocument, TPage } from './api/service';
+import { DocumentService, TDocument, TPage } from './services/document.service';
 import { ZoomComponent } from "./components/zoom-component/zoom.component";
+import { AnnotationComponent } from './components/ annotation-component/annotation.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ViewComponent, CommonModule, ZoomComponent],
+  imports: [ViewComponent, CommonModule, ZoomComponent, AnnotationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

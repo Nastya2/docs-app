@@ -1,9 +1,11 @@
 <div class="top-lining">
     <zoom (emitValue)="getZoom($event)"></zoom>
 </div>
-<div class="pages">
-    <view *ngFor="let page of loadedPages" [url]="page.imageUrl" 
-                    [ngStyle]="{'transform': 'scale(' + scale + ')'}"></view>
+
+<div class="pages" [ngStyle]="{'transform': 'scale(' + scale + ')'}">
+    <annotation></annotation>
+    <view *ngFor="let page of loadedPages" [url]="page.imageUrl" ></view>
 </div>
+
 
 

@@ -1,0 +1,20 @@
+
+<div class="menu-annotations">
+    <mat-icon (click)="openDialog(typeAnnotation.image)" title="Добавить изображение">add_photo_alternate</mat-icon>
+    <mat-icon (click)="openDialog(typeAnnotation.text)" title="Добавить текст">add_alert</mat-icon>
+</div>
+
+<ng-container *ngFor="let text of annotationsText">
+    <div class="text-wrap" cdkDrag>
+       {{ text }}
+       <mat-icon (click)="deleteAnnotation(annotationsText, text)">clear</mat-icon>
+    </div>
+</ng-container>
+
+<ng-container *ngFor="let url of annotationsImage">
+    <div class="image-wrap" cdkDrag>
+        <mat-icon (click)="deleteAnnotation(annotationsImage, url)">clear</mat-icon>
+        <img [src]="url">
+    </div>
+</ng-container>
+
