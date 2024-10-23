@@ -38,7 +38,9 @@ export class AnnotationDialogComponent {
             type: this.data.type,
             annotation: this.dataSend
         } as TAnnotation;
-        this.dialogRef.close(this.data);
+        if(this.dataSend) {
+            this.dialogRef.close(this.data);
+        }
     }
     
 }

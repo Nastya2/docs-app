@@ -1,27 +1,23 @@
-# MyApp
+# Что реализованно из текста задания:
+1) Пользователь открывает документ по ссылке, в которой есть id документа.
+Приложение получает информацию о документе по API, в которой указаны
+страницы со ссылками на изображения (смотрите приложенный json, его используйте как мокап). Изображения - это страницы документа, пользователь имеет возможность скроллить документ вниз для просмотра всех страниц.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+## Реализация:
+Реализована ленивая загрузка страниц для оптимизации загрузки изображений, когда пользователь прокручивает текущую страницу до конца, загружается следующая.
+### Что можно улучшить:
+Можно функцию прослушки события scroll поместить в директиву.
+Оптимизировать работу события scroll вне zone.js, чтобы не запускать постоянно change detector при скролле.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2) Документ может быть увеличен или уменьшен (zoom) кнопками “+” и “-”.
+## Реализация: <zoom>
+ Cложность возникла при увеличении картинки, при transform: scale() изображение увеличивалось относительно своего центра, что приводит к выходу за пределы окна, transform-origin решил эту проблему.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3) Пользователь может добавлять аннотации в виде текста или картинки.Добавленные аннотации можно перемещать и удалять.
+## Реализация: <annotation>
+Для диалогового окна и drag-and-drop использовала Angular Material.
+### Что можно улучшить:
+Можно лучше подумать над абстракцией сущностей аннотаций, если потребуется расширять кол-во сущностей, чтобы расширять, а не модифицировать код.
+Разделить на компонеты кнопки создания и сами аннотации.
+Оптимизировать drag-and-drop вне zone.js.

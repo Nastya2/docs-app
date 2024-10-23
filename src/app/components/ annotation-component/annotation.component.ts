@@ -41,7 +41,7 @@ export class AnnotationComponent {
 
     openDialog(type: TypeAnnotation): void {
         const dialogRef = this.dialog.open<TAnnotation>(AnnotationDialogComponent, {
-          width: '250px',
+          width: '500px',
           data: { type },
         });
     

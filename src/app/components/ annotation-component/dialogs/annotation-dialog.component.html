@@ -4,22 +4,18 @@
 
 <!-- шаблон для текстовой аннотации -->
 <ng-template #textTmp>
-  <h1>Добавление текстовой аннотации</h1>
-  <div>
+  <div class="form">
+    <h1>Добавление текстовой аннотации</h1>
     <input [(ngModel)]="dataSend" placeholder="Введите текст аннотации">
-  </div>
-  <div>
     <button (click)="close()">OK</button>
   </div>
 </ng-template>
 
 <!-- шаблон для изображения -->
 <ng-template #imageTmp>
-  <h1>Добавление аннотации изображение</h1>
-  <div>
+  <div class="form">
+    <h1>Добавление аннотации изображение</h1>
     <input type="file" (change)="changeFile($event)" placeholder="Выберите картинку">
-  </div>
-  <div>
     <button (click)="close()">OK</button>
   </div>
 </ng-template>

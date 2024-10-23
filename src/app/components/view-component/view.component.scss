@@ -1,6 +1,7 @@
-:host {
-    height: 100%;
+.wrap {
     display: flex;
     justify-content: center;
-    transition: transform 0.2s ease;
+    width: 100%;
+    height: 100%;
 }
+
