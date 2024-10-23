@@ -24,3 +24,4 @@ Cложность возникла при увеличении картинки,
 Оптимизировать drag-and-drop вне zone.js.
 
 ### Скрины https://github.com/Nastya2/docs-app/tree/main/src/assets/screens
+### Сайт https://loquacious-croquembouche-aca32c.netlify.app/viewer/view/1
